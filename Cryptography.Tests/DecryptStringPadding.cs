@@ -71,7 +71,7 @@ namespace Cryptography.Tests
             string encryptedText = "8AńZłŻ3QńJ1a9 ŃŁ#Xó1ŚŻRśZ 8 ŻP Ą2źT05TU  WL  ddąZeŻ żńóJ feń c żu%pb7%Z Y3!(899XkDÓIŻAÓńĄDRą 9U9TĄ ł";
 
             // Act:
-            string result =  Cryptography.DecryptStringPadding(encryptedText, secretKey);
+            string result = Cryptography.DecryptStringPadding(encryptedText, secretKey);
 
             // Assert:
             Assert.Null(result);

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -76,11 +75,11 @@ namespace Cryptography
                 byte[] iv = new byte[16];
                 byte[] msg = new byte[encryptedBytes.Length - 16];
 
-                for (int i = 0; i < 16; i++)
-                    iv[i] = encryptedBytes[i];
-
                 for (int i = 16; i < encryptedBytes.Length; i++)
                     msg[i - 16] = encryptedBytes[i];
+
+                for (int i = 0; i < 16; i++)
+                    iv[i] = encryptedBytes[i];
 
                 return Convert.ToBase64String(DecryptByte(msg, GetAesCryptoServiceProvider(key, iv, false)));
             }
@@ -169,4 +168,3 @@ namespace Cryptography
         }
     }
 }
-
